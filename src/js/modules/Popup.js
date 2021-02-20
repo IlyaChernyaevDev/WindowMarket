@@ -13,7 +13,7 @@ export class Popup {
     this.popup.style.display = 'none';
   }
 
-  addListener() {
+  addPopupListener() {
     this.openButton.addEventListener('click', (event) => {
       event.preventDefault();
       this.openPopup();
