@@ -370,6 +370,11 @@ textarea:focus {
   display: inline-block;
 }
 
+.glazing_slider {
+  display: flex;
+  justify-content: space-between;
+}
+
 .glazing_block img {
   display: block;
   margin: 0 auto;
