@@ -1,4 +1,4 @@
-export class Form {
+export default class Form {
   constructor(forms, api) {
     this.forms = document.querySelectorAll(forms);
     this.api = api;

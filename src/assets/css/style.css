@@ -370,11 +370,6 @@ textarea:focus {
   display: inline-block;
 }
 
-.glazing_slider {
-  display: flex;
-  justify-content: space-between;
-}
-
 .glazing_block img {
   display: block;
   margin: 0 auto;
@@ -934,8 +929,12 @@ textarea:focus {
 
 .popup_calc_content .big_img img {
   display: none;
-  margin-bottom: 3rem;
+  margin: 0 auto 3rem auto;
   width: 30rem;
+}
+
+.popup_calc_content .big_img img:first-of-type {
+  display: block;
 }
 
 .popup_calc_content #type1 {

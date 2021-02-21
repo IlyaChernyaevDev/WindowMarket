@@ -1,28 +1,36 @@
-export class Popup {
-  constructor(popup, openButton, closeButton = 'strong') {
+export default class Popup {
+  constructor(popup, openButton, previosPopup = null, closeButton = 'strong') {
     this.popup = document.querySelector(popup);
-    this.openButton = document.querySelector(openButton);
+    this.openButton = document.querySelectorAll(openButton);
+    this.previosPopup = document.querySelector(previosPopup);
     this.closeButton = this.popup.querySelector(closeButton);
   }
 
-  openPopup() {
-    this.popup.style.display = 'block';
+  openPopup(popup) {
+    popup.style.display = 'block';
   }
 
-  closePopup() {
-    this.popup.style.display = 'none';
+  closePopup(popup) {
+    popup.style.display = 'none';
   }
 
   addPopupListener() {
-    this.openButton.addEventListener('click', (event) => {
-      event.preventDefault();
-      this.openPopup();
+    this.openButton.forEach(button => {
+      button.addEventListener('click', event => {
+        event.preventDefault();
+        if(this.previosPopup) {
+          this.closePopup(this.previosPopup);
+        }
+        
+        this.openPopup(this.popup);
+        
+      });
     });
 
-    this.popup.addEventListener('click', (event) => {
+    this.popup.addEventListener('click', event => {
       event.preventDefault();
       if(event.target === this.popup || event.target === this.closeButton) {
-        this.closePopup();
+        this.closePopup(this.popup);
       }
     });
   }
