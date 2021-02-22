@@ -3,6 +3,7 @@ import Form from './modules/Form';
 import Api from './services/Api';
 import Tab from './modules/Tab';
 import Popup from './modules/Popup';
+import Images from './modules/Images';
 
 document.addEventListener('DOMContentLoaded', () => {
 
@@ -21,6 +22,8 @@ document.addEventListener('DOMContentLoaded', () => {
 
   const decorationTabs = new Tab('.no_click', '[data-decoration]', 'after_click');
 
+  const images = new Images('.preview');
+
   popupEngineer.addPopupListener();
   popupCallHeader.addPopupListener();
   popupCallFeedback.addPopupListener();
@@ -38,4 +41,5 @@ document.addEventListener('DOMContentLoaded', () => {
 
   popupApplication.addPopupListener();
 
+  images.addImagesListener();
 });
