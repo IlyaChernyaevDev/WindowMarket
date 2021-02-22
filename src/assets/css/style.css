@@ -693,6 +693,7 @@ textarea:focus {
   text-align: center;
   width: 360px;
   height: 150px;
+  margin: 0 auto;
 }
 
 .container1 {

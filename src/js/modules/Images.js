@@ -44,7 +44,6 @@ export default class Images {
 
     Images.addOverlay(link, this.overlay);
     Images.addImage(this.overlay, image);
-    console.log()
     Images.removeOverlayListenet(this.overlay);
   }
 
