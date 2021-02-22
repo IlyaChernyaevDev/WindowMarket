@@ -28,10 +28,9 @@ export default class Popup {
     });
 
     this.popup.addEventListener('click', event => {
-      event.preventDefault();
       if(event.target === this.popup || event.target === this.closeButton) {
         this.closePopup(this.popup);
-      }
+      } 
     });
   }
 }
