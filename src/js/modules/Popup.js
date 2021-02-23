@@ -32,7 +32,25 @@ export default class Popup {
         this.closePopup(this.popup);
       } 
     });
-
     
+    if(this.popup.classList.contains('popup_calc_profile')) {
+      const arrayCheckbox = document.querySelectorAll('.checkbox');
+      arrayCheckbox[0].checked = true;
+      arrayCheckbox.forEach((checkbox, index) => {
+        checkbox.addEventListener('change', function(event) {
+         if(event.target.checked && index === 0) {
+          arrayCheckbox[1].checked = false;
+         } else {
+          arrayCheckbox[0].checked = false;
+         }
+        });
+      });
+    }
+  }
+
+  popupShow(time) {
+    setTimeout( () => {
+      this.openPopup(this.popup);
+    }, time);
   }
 }

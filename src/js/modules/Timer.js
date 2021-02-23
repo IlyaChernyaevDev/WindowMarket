@@ -46,6 +46,10 @@ export default class Timer {
   clearTotalTime(totalTime) {
     if (totalTime <= 0) {
       clearInterval(this.timeInterval);
+      this.days.innerHTML = '00';
+      this.hours.innerHTML = '00';
+      this.minutes.innerHTML = '00';
+      this.seconds.innerHTML = '00';
     }
   }
 

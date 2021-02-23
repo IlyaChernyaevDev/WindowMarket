@@ -2,6 +2,7 @@ export default class Form {
   constructor(forms, api) {
     this.forms = document.querySelectorAll(forms);
     this.api = api;
+    this.formStateObject = {};
   }
 
   addFormListener() {
@@ -19,8 +20,16 @@ export default class Form {
 
   postFormData(form) {
     const formData = this.getFormData(form);
+    this.formStateObject = {
+      windowShape: document.querySelector('.do_image_more img').alt,
+      windowWidth: document.querySelector('#width').value,
+      widnowHeigh: document.querySelector('#height').value,
+      typeGlazing: document.querySelector('#view_type').value,
+      windowProfile: document.querySelector('.checkbox').checked ? 'Холодное' : 'Теплое',
+    };
+    
+    const json = JSON.stringify(Object.assign(this.formStateObject, Object.fromEntries(formData.entries())));
 
-    const json = JSON.stringify(Object.fromEntries(formData.entries()));
     console.log(json);
 
     this.addFormLoader(form);
@@ -67,4 +76,5 @@ export default class Form {
       form.querySelector('h3.form-message').remove();
     }, 10000);
   }
+
 }

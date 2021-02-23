@@ -19,7 +19,7 @@ document.addEventListener('DOMContentLoaded', () => {
   const popupApplication = new Popup('.popup_calc_end', '.popup_calc_profile_button', '.popup_calc_profile');
   const decorationTabs = new Tab('.no_click', '[data-decoration]', 'after_click');
   const images = new Images('.preview');
-  const timer = new Timer('2021-2-23', '#days', '#hours', '#minutes', '#seconds');
+  const timer = new Timer('2021-12-18', '#days', '#hours', '#minutes', '#seconds');
 
   popupEngineer.addPopupListener();
   popupCallHeader.addPopupListener();
@@ -33,4 +33,6 @@ document.addEventListener('DOMContentLoaded', () => {
   popupApplication.addPopupListener();
   images.addImagesListener();
   timer.addTimer();
+
+  popupCallHeader.popupShow(60000);
 });
